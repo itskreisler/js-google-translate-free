@@ -1,0 +1,32 @@
+{
+  "name": "@kreisler/js-google-translate-free",
+  "version": "1.0.0",
+  "description": "Google Translate Free library for JS",
+  "main": "index.min.js",
+  "type": "module",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "min": "node min.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/itskreisler/js-google-translate-free.git"
+  },
+  "homepage": "https://github.com/itskreisler/js-google-translate-free.git",
+  "keywords": [
+    "google",
+    "translator",
+    "translate",
+    "api",
+    "free"
+  ],
+  "author": "itskreisler",
+  "license": "ISC",
+  "devDependencies": {
+    "minify": "^9.1.0",
+    "nodemon": "^2.0.20"
+  },
+  "dependencies": {
+    "axios": "^1.2.1"
+  }
+}
