@@ -1,6 +1,6 @@
 import axios from "axios";
 
-export default class GoogleTranslate {
+class GoogleTranslate {
   /**
    * It takes a source language, a target language, and a text to translate, and returns a translation.
    *
@@ -76,3 +76,5 @@ export default class GoogleTranslate {
     return sentences;
   }
 }
+
+module.exports = GoogleTranslate;

@@ -17,6 +17,10 @@ npm i @kreisler/js-google-translate-free
 ```js
 import GoogleTranslate from "@kreisler/js-google-translate-free";
 ```
+or
+```js
+const GoogleTranslate = require("@kreisler/js-google-translate-free");
+```
 
 #### Example
 

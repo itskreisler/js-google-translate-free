@@ -1,12 +1,13 @@
 {
   "name": "@kreisler/js-google-translate-free",
-  "version": "1.0.0",
+  "version": "2.0.0",
   "description": "Google Translate Free library for JS",
-  "main": "index.min.js",
-  "type": "module",
+  "main": "./lib",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "min": "node min.js"
+    "min": "node min.mjs",
+    "build": "tsc",
+    "babel": "babel src --out-dir lib"
   },
   "repository": {
     "type": "git",
@@ -23,6 +24,10 @@
   "author": "itskreisler",
   "license": "ISC",
   "devDependencies": {
+    "@babel/cli": "^7.20.7",
+    "@babel/core": "^7.20.12",
+    "@babel/preset-env": "^7.20.2",
+    "babel-cli": "^6.26.0",
     "minify": "^9.1.0",
     "nodemon": "^2.0.20"
   },
