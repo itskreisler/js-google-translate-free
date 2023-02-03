@@ -1,6 +1,6 @@
 {
   "name": "@kreisler/js-google-translate-free",
-  "version": "2.0.1",
+  "version": "2.0.2",
   "description": "Google Translate Free library for JS",
   "main": "./lib",
   "scripts": {
@@ -22,7 +22,7 @@
     "free"
   ],
   "author": "itskreisler",
-  "license": "ISC",
+  "license": "MIT",
   "devDependencies": {
     "@babel/cli": "^7.20.7",
     "@babel/core": "^7.20.12",
