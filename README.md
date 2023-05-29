@@ -1,10 +1,10 @@
-## JS GoogleTranslate free
+# JS Google Translate Free
 
 Simple JS library for talking to Google's Translate API for free.
 
 Eliminates IP request limitations
 
-### Usage
+## Usage
 
 Install package
 
@@ -12,14 +12,18 @@ Install package
 npm i @kreisler/js-google-translate-free
 ```
 
-#### Import module
+### Import module
 
-```js
-import GoogleTranslate from "@kreisler/js-google-translate-free";
+```mjs
+import jsGoogleTranslateFree from "@kreisler/js-google-translate-free";
 ```
+
 or
-```js
-const GoogleTranslate = require("@kreisler/js-google-translate-free");
+
+### Import commonjs
+
+```cjs
+const jsGoogleTranslateFree = require("@kreisler/js-google-translate-free");
 ```
 
 #### Example
@@ -30,7 +34,7 @@ const GoogleTranslate = require("@kreisler/js-google-translate-free");
     const source = "es";
     const target = "en";
     const text = "buenos días";
-    const translation = await GoogleTranslate.translate(source, target, text);
+    const translation = await jsGoogleTranslateFree.translate(source, target, text);
     console.log(translation); // Good morning
   } catch (error) {
     console.error(error);

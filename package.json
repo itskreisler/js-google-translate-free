@@ -1,19 +1,22 @@
 {
   "name": "@kreisler/js-google-translate-free",
-  "version": "2.0.2",
+  "version": "2.1.0",
   "description": "Google Translate Free library for JS",
-  "main": "./lib",
+  "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "min": "node min.mjs",
-    "build": "tsc",
-    "babel": "babel src --out-dir lib"
+    "test": "cross-env NODE_ENV=test node --test test/",
+    "min": "node ./helpers/min.mjs",
+    "build": "echo \"Error: no build specified\" && exit 1",
+    "babel": "babel lib --out-dir src"
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/itskreisler/js-google-translate-free.git"
+    "url": "git+https://github.com/itskreisler/js-google-translate-free.git"
   },
-  "homepage": "https://github.com/itskreisler/js-google-translate-free.git",
+  "homepage": "https://github.com/itskreisler/js-google-translate-free#readme",
+  "bugs": {
+    "url": "https://github.com/itskreisler/js-google-translate-free/issues"
+  },
   "keywords": [
     "google",
     "translator",
@@ -21,17 +24,34 @@
     "api",
     "free"
   ],
-  "author": "itskreisler",
+  "author": {
+    "name": "Kreisler Ramirez Sierra",
+    "email": "tempkreisler@outlook.com",
+    "url": "https://linktr.ee/itskreisler"
+  },
+  "contributors": [
+    {
+      "name": "Kreisler Ramirez Sierra",
+      "email": "tempkreisler@outlook.com",
+      "url": "https://linktr.ee/itskreisler"
+    }
+  ],
   "license": "MIT",
   "devDependencies": {
-    "@babel/cli": "^7.20.7",
-    "@babel/core": "^7.20.12",
-    "@babel/preset-env": "^7.20.2",
+    "@babel/cli": "^7.21.5",
+    "@babel/core": "^7.22.1",
+    "@babel/preset-env": "^7.22.4",
     "babel-cli": "^6.26.0",
-    "minify": "^9.1.0",
-    "nodemon": "^2.0.20"
+    "cross-env": "7.0.3",
+    "minify": "^10.2.0",
+    "nodemon": "^2.0.22",
+    "standard": "17.0.0"
   },
   "dependencies": {
-    "axios": "^1.2.1"
+    "axios": "^1.4.0",
+    "eslint": "8.41.0"
+  },
+  "eslintConfig": {
+    "extends": "./node_modules/standard/eslintrc.json"
   }
 }
