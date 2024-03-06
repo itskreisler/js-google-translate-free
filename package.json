@@ -9,7 +9,7 @@
   },
   "scripts": {
     "test": "cross-env NODE_ENV=test node --test test/",
-    "min": "node ./helpers/min.mjs",
+    "min": "node min.mjs",
     "build": "npm run babel && npm run min",
     "babel": "babel lib --out-dir src"
   },
