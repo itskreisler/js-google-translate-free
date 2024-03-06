@@ -1,12 +1,16 @@
 {
   "name": "@kreisler/js-google-translate-free",
-  "version": "2.1.0",
+  "version": "2.2.0",
   "description": "Google Translate Free library for JS",
   "main": "index.js",
+  "funding": {
+    "type": "buymeacoffee",
+    "url": "https://www.buymeacoffee.com/kreisler"
+  },
   "scripts": {
     "test": "cross-env NODE_ENV=test node --test test/",
     "min": "node ./helpers/min.mjs",
-    "build": "echo \"Error: no build specified\" && exit 1",
+    "build": "npm run babel && npm run min",
     "babel": "babel lib --out-dir src"
   },
   "repository": {
@@ -38,18 +42,18 @@
   ],
   "license": "MIT",
   "devDependencies": {
-    "@babel/cli": "7.21.5",
-    "@babel/core": "7.22.1",
-    "@babel/preset-env": "7.22.4",
+    "@babel/cli": "7.23.9",
+    "@babel/core": "7.24.0",
+    "@babel/preset-env": "7.24.0",
     "babel-cli": "6.26.0",
     "cross-env": "7.0.3",
-    "eslint": "8.41.0",
-    "minify": "10.2.0",
-    "nodemon": "2.0.22",
-    "standard": "17.0.0"
+    "eslint": "8.57.0",
+    "minify": "11.1.1",
+    "nodemon": "3.1.0",
+    "standard": "17.1.0"
   },
   "dependencies": {
-    "axios": "1.4.0"
+    "axios": "1.6.7"
   },
   "eslintConfig": {
     "extends": "./node_modules/standard/eslintrc.json"
