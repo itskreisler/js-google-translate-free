@@ -1,6 +1,6 @@
 {
   "name": "@kreisler/js-google-translate-free",
-  "version": "4.0.0",
+  "version": "4.0.1",
   "description": "Google Translate Free library for JS",
   "main": "dist/index.cjs.js",
   "module": "dist/index.esm.js",
@@ -21,7 +21,8 @@
     "build": "rogo",
     "watch": "rogo -w",
     "docs": "typedoc --out docs src/index.ts",
-    "serve": "pnpx serve -p 1234 ./docs"
+    "serve": "pnpx serve -p 1234 ./docs",
+    "publish:public": "npm publish --access public"
   },
   "repository": {
     "type": "git",
@@ -38,11 +39,7 @@
     "api",
     "free"
   ],
-  "author": {
-    "name": "Kreisler Ramirez Sierra",
-    "email": "tempkreisler@outlook.com",
-    "url": "https://linktr.ee/itskreisler"
-  },
+  "author": "kreisler <tempkreisler@outlook.com> (https://linktr.ee/itskreisler)",
   "contributors": [
     {
       "name": "Kreisler Ramirez Sierra",

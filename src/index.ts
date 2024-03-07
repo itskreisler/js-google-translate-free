@@ -1,17 +1,17 @@
 /* eslint-disable @typescript-eslint/space-before-function-paren */
 // @ts-check
 /**
- * @module GoogleTranslate
- * @description The GoogleTranslate class is used to translate text using the Google Translate API.
- * @class GoogleTranslate
+ * @module JsGoogleTranslateFree
+ * @description The JsGoogleTranslateFree class is used to translate text using the Google Translate API.
+ * @class JsGoogleTranslateFree
  * @example
- * import GoogleTranslate from "@kreisler/js-google-translate-free"
+ * import JsGoogleTranslateFree from "@kreisler/js-google-translate-free"
  * (async () => {
  * try {
  * const from = "es";
  * const to = "en";
  * const text = "buenos días";
- * const translation = await GoogleTranslate.translate({ from, to, text });
+ * const translation = await JsGoogleTranslateFree.translate({ from, to, text });
  * console.log(translation); // Good morning
  * } catch (error) {
  * console.error(error);
@@ -66,14 +66,14 @@ class JsGoogleTranslateFree {
       throw new ErrorStringTextJsGoogleTranslateFree('The text to be translated is required, for more information visit: https://github.com/itskreisler/js-google-translate-free#readme')
     }
     // Request translation
-    const response = await JsGoogleTranslateFree.requestTranslation(
+    const response = await JsGoogleTranslateFree.#requestTranslation(
       source,
       to,
       text
     )
 
     // Clean translation
-    const translation = JsGoogleTranslateFree.getSentencesFromJSON(response)
+    const translation = JsGoogleTranslateFree.#getSentencesFromJSON(response)
 
     return translation
   }
@@ -85,7 +85,7 @@ class JsGoogleTranslateFree {
    * @param {String} text - The text to be translated.
    * @returns The translation.
    */
-  static async requestTranslation(source: string, target: string, text: string): Promise<string> {
+  static async #requestTranslation(source: string, target: string, text: string): Promise<string> {
     if (text.length >= 5000) {
       throw new Error('Maximum number of characters exceeded: 5000')
     }
@@ -120,7 +120,7 @@ class JsGoogleTranslateFree {
    * @param {String} json - The response from the Google Translate API.
    * @returns The function returns the cleaned translation.
    */
-  static getSentencesFromJSON(json: string): string {
+  static #getSentencesFromJSON(json: string): string {
     const sentencesArray = JSON.parse(json)
     let sentences: string = ''
 
