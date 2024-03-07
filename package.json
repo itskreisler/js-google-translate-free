@@ -1,6 +1,6 @@
 {
   "name": "@kreisler/js-google-translate-free",
-  "version": "4.0.1",
+  "version": "4.0.2",
   "description": "Google Translate Free library for JS",
   "main": "dist/index.cjs.js",
   "module": "dist/index.esm.js",

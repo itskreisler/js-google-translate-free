@@ -35,7 +35,7 @@ export interface RequestTranslationParams {
   to: LanguagesCodigoISO639WhitoutAuto
   text: string
 }
-
+export type T = any
 /**
  * @typedef {Object} RequestTranslationParams
  * @property {String} [from] - The language you want to translate from.
@@ -121,7 +121,15 @@ class JsGoogleTranslateFree {
    * @returns The function returns the cleaned translation.
    */
   static #getSentencesFromJSON(json: string): string {
-    const sentencesArray = JSON.parse(json)
+    const jsonparse = (txt: string): T => JSON.parse(txt)
+
+    let sentencesArray: T[]
+    try {
+      sentencesArray = jsonparse(json)
+    } catch (error) {
+      const text: string = new TextDecoder().decode(json as unknown as AllowSharedBufferSource)
+      sentencesArray = jsonparse(text)
+    }
     let sentences: string = ''
 
     if (sentencesArray === null || sentencesArray[0] === null || [sentencesArray, sentencesArray[0]].some((item) => typeof item === 'undefined')) {
@@ -130,7 +138,7 @@ class JsGoogleTranslateFree {
       )
     }
 
-    sentencesArray[0].forEach((chunck: any[]) => {
+    sentencesArray[0].forEach((chunck: T[]) => {
       if (typeof chunck[0] !== 'undefined') {
         sentences += String(chunck[0])
       }
