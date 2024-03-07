@@ -1,4 +1,4 @@
-# JS Google Translate Free
+# JS Google Translate Free + Typescript 🚀
 
 Simple JS library for talking to Google's Translate API for free.
 
@@ -19,7 +19,7 @@ npm i @kreisler/js-google-translate-free
 ### Import module
 
 ```mjs
-import jsGoogleTranslateFree from "@kreisler/js-google-translate-free";
+import JsGoogleTranslateFree from "@kreisler/js-google-translate-free";
 ```
 
 or
@@ -27,7 +27,7 @@ or
 ### Import commonjs
 
 ```cjs
-const jsGoogleTranslateFree = require("@kreisler/js-google-translate-free");
+const JsGoogleTranslateFree = require("@kreisler/js-google-translate-free");
 ```
 
 #### Example #1
@@ -38,7 +38,7 @@ const jsGoogleTranslateFree = require("@kreisler/js-google-translate-free");
     const from = "es";
     const to = "en";
     const text = "buenos días";
-    const translation = await jsGoogleTranslateFree.translate({ from, to, text });
+    const translation = await JsGoogleTranslateFree.translate({ from, to, text });
     console.log(translation); // Good morning
   } catch (error) {
     console.error(error);
@@ -54,7 +54,7 @@ const jsGoogleTranslateFree = require("@kreisler/js-google-translate-free");
     // const from = "en"; optional default is "auto"
     const to = "es";
     const text = "Good morning";
-    const translation = await jsGoogleTranslateFree.translate({ to, text });
+    const translation = await JsGoogleTranslateFree.translate({ to, text });
     console.log(translation); // Buenos días
   } catch (error) {
     console.error(error);

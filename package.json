@@ -1,17 +1,27 @@
 {
   "name": "@kreisler/js-google-translate-free",
-  "version": "2.2.0",
+  "version": "4.0.0",
   "description": "Google Translate Free library for JS",
-  "main": "index.js",
+  "main": "dist/index.cjs.js",
+  "module": "dist/index.esm.js",
+  "types": "dist/index.d.ts",
+  "jsdelivr": "dist/index.iife.js",
+  "unpkg": "dist/index.iife.js",
+  "files": [
+    "dist/**/*"
+  ],
   "funding": {
     "type": "buymeacoffee",
     "url": "https://www.buymeacoffee.com/kreisler"
   },
   "scripts": {
-    "test": "cross-env NODE_ENV=test node --test test/",
-    "min": "node min.mjs",
-    "build": "npm run babel && npm run min",
-    "babel": "babel lib --out-dir src"
+    "test:cjs": "cross-env NODE_ENV=test node --test test/test.spec.cjs",
+    "test:mjs": "cross-env NODE_ENV=test node --test test/test.spec.mjs",
+    "prepare": "npm run build",
+    "build": "rogo",
+    "watch": "rogo -w",
+    "docs": "typedoc --out docs src/index.ts",
+    "serve": "pnpx serve -p 1234 ./docs"
   },
   "repository": {
     "type": "git",
@@ -42,20 +52,22 @@
   ],
   "license": "MIT",
   "devDependencies": {
-    "@babel/cli": "7.23.9",
-    "@babel/core": "7.24.0",
-    "@babel/preset-env": "7.24.0",
-    "babel-cli": "6.26.0",
-    "cross-env": "7.0.3",
-    "eslint": "8.57.0",
-    "minify": "11.1.1",
-    "nodemon": "3.1.0",
-    "standard": "17.1.0"
+    "@types/node": "^20.11.25",
+    "@typescript-eslint/eslint-plugin": "^5.50.0",
+    "cross-env": "^7.0.3",
+    "eslint": "^8.0.1",
+    "eslint-config-standard-with-typescript": "^36.0.0",
+    "eslint-plugin-import": "^2.25.2",
+    "eslint-plugin-n": "^15.0.0",
+    "eslint-plugin-promise": "^6.0.0",
+    "rogo": "^3.1.5",
+    "ts-node": "^10.9.2",
+    "typedoc": "^0.25.11",
+    "typescript": "^5.4.2"
   },
   "dependencies": {
-    "axios": "1.6.7"
+    "axios": "1.6.7",
+    "@babel/runtime": "^7.24.0"
   },
-  "eslintConfig": {
-    "extends": "./node_modules/standard/eslintrc.json"
-  }
+  "eslintConfig": {}
 }
