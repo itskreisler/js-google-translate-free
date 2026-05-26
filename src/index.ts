@@ -163,8 +163,3 @@ class ErrorStringTextJsGoogleTranslateFree extends Error {
 }
 export default JsGoogleTranslateFree
 export { JsGoogleTranslateFree }
-try {
-  module.exports = JsGoogleTranslateFree
-} catch (error) {
-
-}

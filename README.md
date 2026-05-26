@@ -27,7 +27,7 @@ or
 ### Import commonjs
 
 ```cjs
-const JsGoogleTranslateFree = require("@kreisler/js-google-translate-free");
+const { JsGoogleTranslateFree } = require("@kreisler/js-google-translate-free");
 ```
 
 #### Example #1
@@ -56,6 +56,30 @@ const JsGoogleTranslateFree = require("@kreisler/js-google-translate-free");
     const text = "Good morning";
     const translation = await JsGoogleTranslateFree.translate({ to, text });
     console.log(translation); // Buenos días
+  } catch (error) {
+    console.error(error);
+  }
+})();
+```
+
+#### Example #3 — Short story (Spanish → English)
+
+```js
+(async () => {
+  try {
+    const story =
+      "Había una vez un patito feo que vivía en una granja. " +
+      "Todos los animales se burlaban de él porque era diferente. " +
+      "Un día, el patito creció y se convirtió en un hermoso cisne.";
+    const translation = await JsGoogleTranslateFree.translate({
+      from: "es",
+      to: "en",
+      text: story,
+    });
+    console.log(translation);
+    // Once upon a time there was an ugly duckling who lived on a farm.
+    // All the animals made fun of him because he was different.
+    // One day, the duckling grew up and became a beautiful swan.
   } catch (error) {
     console.error(error);
   }
